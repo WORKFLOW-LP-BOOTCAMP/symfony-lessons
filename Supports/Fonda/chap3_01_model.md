@@ -373,4 +373,9 @@ Hydratez cette table avec les DataFixtures ( même fichier ).
    1. Tous les professeurs
    2. Un professeur en fonction de son id (FK) vous pouvez utiliser l'injection de dépendance. 
     ```php
+        //use Doctrine\ORM\EntityManagerInterface;
+        public function index(EntityManagerInterface $em): Response
+        {
+            // ...
+        }
     ```
