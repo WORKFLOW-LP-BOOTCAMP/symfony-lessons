@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <script src="/docs/5.3/assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.122.0">
+    <title>Blog Template · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/blog/">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="border-bottom lh-1 py-3">
+            <div class="row flex-nowrap justify-content-between align-items-center">
+                <div class="col-4 text-center">
+                    <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Trainers - Dev </a>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="#" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img"
+                            viewBox="0 0 24 24">
+                            <title>Search</title>
+                            <circle cx="10.5" cy="10.5" r="7.5" />
+                            <path d="M21 21l-5.2-5.2" />
+                        </svg>
+                    </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="nav-scroller py-1 mb-3 border-bottom">
+            <nav class="nav nav-underline">
+                <a class="nav-item nav-link link-body-emphasis" href="#">Home</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Trainers</a>
+                <a class="nav-item nav-link link-body-emphasis" href="#">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+            <div class="col-lg-6 px-0">
+                <h1 class="display-4 fst-italic">Trainers Dev</h1>
+                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
+                    efficiently about what’s most interesting in this post’s contents.</p>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-primary-emphasis">React</strong>
+                        <h3 class="mb-0">Aurélien S</h3>
+                        <p class="card-text mb-auto">Aurélien has been teaching yoga for over 8 years and specializes in Vinyasa and Hatha yoga.</p>
+                     
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                            role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                            focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em">Thumbnail</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div
+                    class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static">
+                        <strong class="d-inline-block mb-2 text-success-emphasis">Symfony</strong>
+                        <h3 class="mb-0">Antoine L</h3>
+                        <p class="mb-auto">Antoine L is a certified Symfony coach with over 10 years of experience.</p>
+                       
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg"
+                            role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"
+                            focusable="false">
+                            <title>Placeholder</title>
+                            <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
+                                dy=".3em">Thumbnail</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-md-8">
+                <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                    News
+                </h3>
+
+                <article class="blog-post">
+                    <h2 class="display-5 link-body-emphasis mb-1">React</h2>
+                    <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+
+                    <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap.
+                        Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
+                    <hr>
+                    <p>This is some additional paragraph placeholder content. It has been written to fill the available
+                        space and show how a longer snippet of text affects the surrounding content. We'll repeat it
+                        often to keep the demonstration flowing, so be on the lookout for this exact same string of
+                        text.</p>
+                
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div>
+                        <h4 class="fst-italic">The Power of Meditation</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96"
+                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <rect width="100%" height="100%" fill="#777" />
+                                    </svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">The Power of Meditation</h6>
+                                        <small class="text-body-secondary">Nov 12</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
+                                    href="#">
+                                    <svg class="bd-placeholder-img" width="100%" height="96"
+                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <rect width="100%" height="100%" fill="#777" />
+                                    </svg>
+                                    <div class="col-lg-8">
+                                        <h6 class="mb-0">Yoga for Beginners</h6>
+                                        <small class="text-body-secondary">Nov 5</small>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-4">
+                        <h4 class="fst-italic">Elsewhere</h4>
+                        <ol class="list-unstyled">
+                            <li><a href="#">GitHub</a></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+     
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
