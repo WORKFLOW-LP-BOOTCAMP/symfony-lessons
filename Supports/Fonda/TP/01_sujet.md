@@ -32,7 +32,9 @@ graph TD
 
 ### Détails de la page à réaliser, pour l'instant uniquement la page home
 
-1. Home (page d'accueil) : Elle répertoriera les derniers articles rédigés par les formateurs colonne de droite sous la présentation des formateurs.
+1. Home (page d'accueil) :
+  1. Elle présente les formateurs sous le titre du site.
+  1. Elle répertoriera les derniers articles rédigés par les formateurs colonne de droite sous la présentation des formateurs.
 
 Utilisez le dataset suivant : 
 [dataset](./Data/trainers.php) pour afficher les données en page d'accueil.
