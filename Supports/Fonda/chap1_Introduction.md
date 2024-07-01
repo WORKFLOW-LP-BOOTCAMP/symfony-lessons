@@ -495,7 +495,6 @@ Pour intégrer Bootstrap 5 dans un projet Symfony 7 en utilisant le composant As
        <head>
            <meta charset="UTF-8">
            <title>{% block title %}Welcome!{% endblock %}</title>
-           <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
            {% block stylesheets %}{% endblock %}
        </head>
        <body>
