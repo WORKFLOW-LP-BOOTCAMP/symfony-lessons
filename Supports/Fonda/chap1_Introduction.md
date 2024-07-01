@@ -454,23 +454,6 @@ templates/
 
 Le layout (modèle) **base.html.twig** est un template que les vues composites, comme **index.html.twig**, hériteront. Cela permet de "factoriser" du code qui se répète dans toutes les pages.
 
-## 01 Exercice duck
-
-**Créez un projet, si ce n'est pas déjà fait, pour faire l'exercice, ce n'est pas notre projet fil rouge.**
-
-Mettez un petit canard dans la page d'accueil.
-
-1. Vérifiez que AssetMapper est installé.
-2. Vous avez un dossier assets
-3. Créez le dossier images
-4. Placez l'image dans ce dossier
-5. Dans le code du HTML écrivez ce qui suit pour télécharger l'image dans la vue
-
-```html
-<!-- si le nom de votre image est duck.png -->
-<img src="{{ asset('images/duck.png') }}">
-```
-
 ## Bootstrap CSS
 
 Pour intégrer Bootstrap 5 dans un projet Symfony 7 en utilisant le composant AssetMapper, suivez les étapes suivantes :
