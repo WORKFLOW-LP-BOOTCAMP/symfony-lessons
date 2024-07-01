@@ -281,6 +281,12 @@ Listez dans la console maintenant ces dépendances.
 symfony console list make
 ```
 
+Création du contrôleur HomeController , tapez à la racine de votre projet, une fois les makers installés
+
+```bash
+php bin/console make:controller Home
+```
+
 ### Twig moteur de template
 
 Twig est un moteur de template pour PHP largement utilisé dans le développement web, notamment avec des frameworks comme Symfony.
