@@ -34,7 +34,6 @@ graph TD
 
 1. Créez le controller Home (fournit)
 1. Créez le controller Contact (fournit)
-1. Créez le controller Trainer
 
 ### Détails des différentes pages à réaliser - pour l'instant uniquement la page home
 
