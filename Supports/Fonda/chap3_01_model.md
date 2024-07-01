@@ -13,7 +13,7 @@ flowchart LR
 
 ![mapping01](./images/mapping.png)
 
-## 1. Introduction au modèle de données
+## Introduction au modèle de données
 
 Nous aurons besoin premièrement de **Doctrine** qui est un **ORM (Object Relational Mapper)**.
 
@@ -30,7 +30,7 @@ composer require symfony/maker-bundle
 ```  
 Vous pouvez voir les dépendences déjà installé sur votre projet symfony dans le fichier **composer.json**.
 
-## 2. Configuration du ficher **.env**.
+## Configuration du ficher **.env**.
 
 Afin de pouvoir créer notre base de données, nous devons d'abort indiquer à notre projet symfony où il peut déjà la trouver.
 
@@ -42,7 +42,7 @@ Il faudra néanmoins modifier cette ligne d'instruction;
 
 Pour trouver la version de votre application MySQL, vous pouvez vous y connécter et lancer la commande `status`; Parmis les information affiché vous trouverez la version de votre server.
 
-## 3. Création de la base de données de votre application
+## Création de la base de données de votre application
 
 Vous pourriez utiliser la commande `CREATE DATABASES db_name;` pour créer directement votre base de données depuis celle-ci, mais pourquoi s'embêter à la créer manuellement alors que nous pouvons la créer automatiquement ?
 Nous venons de configurer notre application afin qu'elle puisse communiquer avec MySQL.
@@ -59,7 +59,7 @@ Vous pouvez voir tout un pannel de nouvelles commandes disponiblent avec doctrin
 :rocket: On sait maintenant quelle commande nous pouvons taper pour créer notre base de données.
 `php bin/console doctrine:database:create`
 
-## 4. Création de notre première table (ou plutôt de notre premier "Entity class")
+## Création de notre première table (ou plutôt de notre premier "Entity class")
 
 Lien vers la doc : [Creating an Entity Class](https://symfony.com/doc/current/doctrine.html#creating-an-entity-class)
 Il ne faut pas hésiter à aller vers la [doc de symfony](https://symfony.com), qui est en générale à jour !
@@ -98,7 +98,31 @@ php bin/console doctrine:migrations:migrate
 > [!WARNING]  
 > Attention, si vous modifier votre entité, vous devrez refaire une migration !
 
-### 01 Exercice créer une entité Trainer et Article
+## Relation - modèle relationnelle 
+
+Doctrine, le système ORM utilisé avec Symfony, supporte plusieurs types de relations entre les entités. Voici une liste des relations ORM principales que Doctrine permet de définir entre les entités :
+
+- One-To-One (Un-à-Un) :
+
+Une entité est associée à exactement une autre entité.
+Exemple : Un utilisateur a une adresse.
+
+- One-To-Many (Un-à-Plusieurs) :
+
+Une entité est associée à plusieurs instances d'une autre entité.
+Exemple : Un article peut avoir plusieurs commentaires.
+
+- Many-To-One (Plusieurs-à-Un) :
+
+Plusieurs instances d'une entité sont associées à une seule instance d'une autre entité.
+Exemple : Plusieurs commentaires appartiennent à un seul article.
+
+- Many-To-Many (Plusieurs-à-Plusieurs) :
+
+Plusieurs instances d'une entité sont associées à plusieurs instances d'une autre entité.
+Exemple : Un utilisateur peut appartenir à plusieurs groupes, et un groupe peut avoir plusieurs utilisateurs.
+
+### 1 Exercice créer une entité Trainer et Article
 
 Pour modéliser les données des formateurs et de leurs articles en utilisant une approche MERISE avec plusieurs tables, voici comment nous pourrions structurer notre modèle :
 
@@ -146,35 +170,6 @@ Voici comment pourrait être représenté ce modèle dans un diagramme MERISE :
 - **Article** : Représente l'entité des articles écrits par les formateurs. Elle inclut une clé étrangère `trainer_id` qui fait référence à l'entité `Trainer`.
 - **Relations** : La relation entre `Trainer` et `Article` est une relation un-à-plusieurs (1 Trainer peut avoir plusieurs Articles). Cela est représenté par la flèche avec un `1` du côté `Trainer` et un `*` du côté `Article`.
 
-## Relation - modèle relationnelle 
-
-Doctrine, le système ORM utilisé avec Symfony, supporte plusieurs types de relations entre les entités. Voici une liste des relations ORM principales que Doctrine permet de définir entre les entités :
-
-- One-To-One (Un-à-Un) :
-
-Une entité est associée à exactement une autre entité.
-Exemple : Un utilisateur a une adresse.
-
-- One-To-Many (Un-à-Plusieurs) :
-
-Une entité est associée à plusieurs instances d'une autre entité.
-Exemple : Un article peut avoir plusieurs commentaires.
-
-- Many-To-One (Plusieurs-à-Un) :
-
-Plusieurs instances d'une entité sont associées à une seule instance d'une autre entité.
-Exemple : Plusieurs commentaires appartiennent à un seul article.
-
-- Many-To-Many (Plusieurs-à-Plusieurs) :
-
-Plusieurs instances d'une entité sont associées à plusieurs instances d'une autre entité.
-Exemple : Un utilisateur peut appartenir à plusieurs groupes, et un groupe peut avoir plusieurs utilisateurs.
-
-- Self-Referencing Relationships (Auto-référence) :
-
-Une entité est associée à une autre instance de la même entité.
-Exemple : Une entité Category peut avoir une relation auto-référente pour représenter les catégories parentes/enfants.
-
 Dans notre problématique `Trainer` et `Article`, il faut considérer dans les deux sens la relation
 
 1. Un-à-plusieurs (One-to-Many)
@@ -189,7 +184,7 @@ Cette relation, que l'on nommera `articles`, est définie dans l'entité Trainer
 Cette relation,  que l'on nommera `trainer`, est définie dans l'entité Article avec l'attribut 
 #[ORM\ManyToOne].
 
-## 5. Comment ajouter des données d'exemple DataFixtures
+## Comment ajouter des données d'exemple DataFixtures
 
 Nous allons maintenant ajouter des données d'exemples dans notre table avec [symfony/orm-fixtures](https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html).
 
@@ -281,101 +276,3 @@ class AppFixtures extends Fixture
     }
 }
 ```
-
-### 02 Exercice créez des données 
-
-1. Créez des données pour Trainer et Article
-
-### 03 Exercice affichez les données, les trainers uniquement pour l'instant
-
-Pour récupérer nos données, nous devons indiquer le namespace du repository avec le mot-clé `use`, utiliser le repository et lui appliquer la méthode `findAll()` pour obtenir une liste de nos données.
-
-```php
-<?php
-
-namespace App\Controller;
-
-// Namespace de TrainersRepository
-use App\Repository\TrainersRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-
-class TrainersController extends AbstractController
-{
-    #[Route('/trainers', name: 'app_trainers')]
-    public function index(TrainersRepository $trainersRepository): Response
-    {
-        $trainers = $trainersRepository->findAll();
-
-        return $this->render('trainers/index.html.twig', [
-            'trainers' => $trainers,
-        ]);
-    }
-}
-```
-
-Doctrine, le système ORM utilisé avec Symfony, supporte plusieurs types de relations entre les entités. Voici une liste des relations ORM principales que Doctrine permet de définir entre les entités :
-
-1. **One-To-One (Un-à-Un)** :
-   - Une entité est associée à exactement une autre entité.
-   - Exemple : Un utilisateur a une adresse.
-
-2. **One-To-Many (Un-à-Plusieurs)** :
-   - Une entité est associée à plusieurs instances d'une autre entité.
-   - Exemple : Un article peut avoir plusieurs commentaires.
-
-3. **Many-To-One (Plusieurs-à-Un)** :
-   - Plusieurs instances d'une entité sont associées à une seule instance d'une autre entité.
-   - Exemple : Plusieurs commentaires appartiennent à un seul article.
-
-4. **Many-To-Many (Plusieurs-à-Plusieurs)** :
-   - Plusieurs instances d'une entité sont associées à plusieurs instances d'une autre entité.
-   - Exemple : Un utilisateur peut appartenir à plusieurs groupes, et un groupe peut avoir plusieurs utilisateurs.
-
-5. **Self-Referencing Relationships (Auto-référence)** :
-   - Une entité est associée à une autre instance de la même entité.
-   - Exemple : Une entité `Category` peut avoir une relation auto-référente pour représenter les catégories parentes/enfants.
-
-## 03 Exercice implémentez les relations
-
-Si ce n'est pas déjà fait créez les relations entre les deux entités.
-
-Hydratez cette table avec les DataFixtures ( même fichier ).
-
-Rappels des commandes :
-
-```bash
-# création des migrations
-php bin/console make:migration
-# update database
-php bin/console doctrine:migrations:migrate
-
-# vérifiez que les données sont bien dans les tables
-php bin/console dbal:run-sql 'SELECT * FROM trainer'
-```
-
-## 04 Exercice - ChatGPT
-
-Maintenant que vous avez le modèle de données créer d'autres formateurs en utilisant ChatGPT pour les générer.
-
-## 05 Exercice modifier une Entity Trainer existante
-
-Modifiez l'entité Trainer en ajoutant le champs **stars** (notation sur 5) de type **numérique**.
-
-- stars type numérique
-
-Hydratez cette table avec les DataFixtures ( même fichier ).
-
-## 06 Exercice affichez les données d'exemple dans un nouveau contrôleur
-
-1. Créez le contrôleur TrainerController et créez les routes pour afficher : 
-   1. Tous les professeurs
-   2. Un professeur en fonction de son id (FK) vous pouvez utiliser l'injection de dépendance. 
-    ```php
-        //use Doctrine\ORM\EntityManagerInterface;
-        public function index(EntityManagerInterface $em): Response
-        {
-            // ...
-        }
-    ```

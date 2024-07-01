@@ -32,7 +32,7 @@ class BlogController extends AbstractController
 }
 ```
 
-## Configuration Initiale
+## Configuration Initiale : attribute - par défaut c'est déjà en place 
 
 Pour activer le routage basé sur les attributs, configurez Symfony pour reconnaître les routes définies dans des espaces de noms et des répertoires spécifiques en utilisant des fichiers de configuration comme `attributes.yaml`.
 
@@ -54,10 +54,6 @@ Les routes peuvent également être définies dans des fichiers séparés YAML, 
 ## Correspondance des Méthodes HTTP
 
 Les routes, par défaut, répondent à toutes les méthodes HTTP (GET, POST, etc.). Utilisez l'option `methods` pour restreindre les routes à des verbes HTTP spécifiques, renforçant la sécurité et respectant les principes RESTful.
-
-## Correspondance des Expressions
-
-L'option `condition` permet aux routes de correspondre en fonction de conditions arbitraires définies à l'aide du langage d'expression de Symfony. Les conditions peuvent utiliser des paramètres de requête, des en-têtes HTTP et même des services pour déterminer l'applicabilité de la route.
 
 ## Débogage des Routes
 
@@ -108,20 +104,8 @@ class TrainerController extends AbstractController
 
 Ici, la route `/trainers` est définie directement au-dessus de la méthode `list()` à l'aide de l'attribut `#[Route]`. Cette action récupère tous les formateurs depuis la base de données et les passe au modèle Twig pour l'affichage.
 
-2. **Configuration du Routage avec des Attributs**
 
-Pour que Symfony reconnaisse les routes définies par attributs, la configuration reste la même :
-
-```yaml
-# config/routes.yaml
-controllers:
-    resource:
-        path: ../../src/Controller/
-        namespace: App\Controller
-    type: attribute
-```
-
-### Exemple 2: Validation des Paramètres de Route
+### Validation des Paramètres de Route
 
 Supposons que nous voulons une autre route pour afficher les détails d'un formateur spécifique en fonction de son ID.
 
@@ -136,17 +120,36 @@ trainer_show:
 
 Ici, `{id}` est un paramètre de route qui doit correspondre au motif spécifié `\d+`, qui autorise uniquement les chiffres.
 
-## Exercice route parametrique dans le contrôleur HomeController
+## Exercice route parametrique uniquement dans HomeController
 
 Mettez en pratique cette route dans notre projet fil rouge, sans re-créer de contrôleur, **dans le contrôleur HomeController**.
 
+### Partie 1
+
 1. Créez la méthode qui affiche un trainer.
 2. Mettez en place la route et son template spécifique pour afficher le détails d'un formateur.
-3. Seules les "pages" dont l'id = 1 ou 2 peuvent s'afficher, gérez cette condition dans validation des paramètre.
-4. Créez une page 404
-5. En lisant l'exemple 3 faites en sorte que la page du premier professeur s'affiche si on ne renseigne pas une valeur pour le paramètre id.
+   
+### Partie 2
 
-### Exemple 3: Utilisation de Paramètres Optionnels
+1. Seules les "pages" dont l'id = 1 ou 2 peuvent s'afficher, gérez cette condition dans validation des paramètre.
+2. Créez une page 404
+3. En lisant l'exemple 3 faites en sorte que la page du premier professeur s'affiche si on ne renseigne pas une valeur pour le paramètre id dans la route.
+
+### Partie 3
+
+1. Créez maintenant les liens pour afficher la page d'accueil.
+2. Sous chaque cards de formateur un lien lire la suite permet d'afficher la page du formateur.
+
+#### Indications utilisez la fonction path de Symfony dans Twig
+
+La fonction path dans Twig permet de créer les urls en utilisant la route nommée.
+
+```twig
+{{ path('trainer_home') }} == /
+{{ path('trainer_show', {id: trainer.id}) }} == /trainer/1
+```
+
+### Utilisation de Paramètres Optionnels - pagination
 
 Parfois, nous voulons que certains paramètres de route soient optionnels. Par exemple, pour afficher une liste de formateurs paginée où la page est optionnelle et a une valeur par défaut.
 
@@ -163,7 +166,7 @@ trainer_list:
 
 Dans cet exemple, `{page}` est un paramètre de route qui peut être un nombre entier (`\d+`). Si l'utilisateur ne spécifie pas de numéro de page, il sera automatiquement redirigé vers la page 1.
 
-### Exemple 4: Conversion des Paramètres en Objets
+### Conversion des Paramètres en Objets
 
 Imaginons que chaque formateur est représenté par un objet `Trainer` en base de données. Nous voulons que notre route charge automatiquement l'objet `Trainer` correspondant en fonction de l'ID fourni.
 
