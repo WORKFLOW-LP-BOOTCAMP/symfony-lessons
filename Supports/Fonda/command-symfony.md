@@ -44,6 +44,8 @@ hp bin/console importmap:install
 # creation controller
 symfony console make:controller Home
 
+################################ ORM Doctrine ####################################################
+
 # Doctrine ORM
 composer require symfony/orm-pack
 # maker pour SF - ORM Doctrine
