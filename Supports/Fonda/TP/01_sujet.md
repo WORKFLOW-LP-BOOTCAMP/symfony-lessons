@@ -8,15 +8,13 @@ Dans un nouveau projet dev-trainer, vous allez créer la home page.
 
 1. Introduction au projet fil rouge.  
 
-Vous allez réaliser une page princiaple sur deux colonnes, **Bootstrap**, aidez vous des wireframe ci-après.
+Vous allez réaliser une page princiaple sur deux colonnes avec le  **Bootstrap** CSS, aidez vous des wireframe ci-après.
 
-Bien sûr vous allez utiliser Twig pour réaliser chacune des intégrations. Aidez-vous de la documentation officiel.
-
-On ne vous demande pas de faire un maquettage graphique du projet, utilisez les wireframes ci-dessous et surtout un Framework CSS pour intégrer les pages (Bootstrap CSS conseillé).
+Bien sûr vous allez utiliser Twig pour réaliser l'intégration de cette première. Vous pouvez vous aider de la documentation officiel, Twig et Symfony.
 
 1. Dans le cas où vous voulez changer de Framework CSS voyez la documentation en ligne : [assetmapper](https://symfony.com/doc/current/frontend/asset_mapper.html)
 
-2. Nous allons construire l'arborescence suivante.
+2. Nous allons construire l'arborescence cette semaine dans notre projet fil rouge.
 
 ```mermaid
 graph TD
@@ -28,26 +26,16 @@ graph TD
   B -->|Liste des trainers| HH(Alice)
 ```
 
-- Intégrez la page ci-dessus ( simplement en CSS)
-
 🚧 
 
 1. Créez le controller Home (fournit)
-1. Créez le controller Contact (fournit)
 
-### Détails des différentes pages à réaliser - pour l'instant uniquement la page home
+### Détails de la page à réaliser, pour l'instant uniquement la page home
 
-1. Home (page d'accueil) : Elle répertoriera les derniers feedbacks rédigés par les formateurs, des cours réalisés. L'aspect fonctionnel de cette page sera mis en œuvre ultérieurement lors de la création de la base de données.
+1. Home (page d'accueil) : Elle répertoriera les derniers articles rédigés par les formateurs colonne de droite sous la présentation des formateurs.
 
-Utilisez les informations dans le dataset suivant : 
+Utilisez le dataset suivant : 
 [dataset](./Data/trainers.php) pour afficher les données en page d'accueil.
-
-Les pages suivantes sont statiques pour l'instant.
-
-2. Trainers : elle présentera la liste des formateurs ainsi que leurs compétences à réaliser.
-3. Trainer : elle affiche un trainer.
-
-4. Contact : elle fournira des informations sur la manière de contacter la société.
 
 ### Wireframe
 
@@ -61,8 +49,6 @@ Vous pouvez vous aider de cette page pour réaliser l'intégration CSS : [home p
 ## Indications
 
 Dans le contrôleur HomeController créer une méthode privée data comme suit pour traiter les données dans la méthode index pour la page d'accueil.
-
-Attentions pour afficher les derniers articles dans la colonne de droite il faudra penser à faire une boucle dans une boucle.
 
 ```php
 // Dans le controller HomeController 
