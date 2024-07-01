@@ -8,7 +8,7 @@ Dans un nouveau projet dev-trainer, vous allez créer la home page.
 
 1. Introduction au projet fil rouge.  
 
-Vous allez réaliser une page princiaple sur deux colonnes, en utilisant **Tailwindcss** ou vos propres framework css ou **Bootstrap**, aidez vous des wireframe ci-après.
+Vous allez réaliser une page princiaple sur deux colonnes, **Bootstrap**, aidez vous des wireframe ci-après.
 
 Bien sûr vous allez utiliser Twig pour réaliser chacune des intégrations. Aidez-vous de la documentation officiel.
 
