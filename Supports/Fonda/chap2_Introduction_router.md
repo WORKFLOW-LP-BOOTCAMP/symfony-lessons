@@ -134,8 +134,24 @@ Mettez en pratique cette route dans notre projet fil rouge, sans re-créer de co
 ### Partie 2
 
 1. Seules les "pages" dont l'id = 1 ou 2 peuvent s'afficher, gérez cette condition dans validation des paramètre.
-2. Créez une page 404
-3. En lisant l'exemple 3 faites en sorte que la page du premier professeur s'affiche si on ne renseigne pas une valeur pour le paramètre id dans la route.
+2. Créez une page 404, considérez le code suivant à mettre dans le fichier routes.yaml
+```yaml
+error_404:
+    path: /{catchall}
+    controller: 'App\Controller\ErrorController::error404'
+    requirements:
+        catchall: '.*'
+```
+1. Si on ne renseigne pas une valeur pour le paramètre id dans la route. Utilisez encore le fichier routes.yaml pour afficher la page une défaut.
+```yaml
+trainer_show:
+    path: /trainer/{id}
+    controller: App\Controller\HomeController::show
+    defaults:
+        id: 1
+    requirements:
+        id: '[1,2]'
+```
 
 ### Partie 3
 
