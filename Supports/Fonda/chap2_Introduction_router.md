@@ -126,8 +126,10 @@ Mettez en pratique cette route dans notre projet fil rouge, sans re-créer de co
 
 ### Partie 1
 
-1. Créez la méthode qui affiche un trainer.
-2. Mettez en place la route et son template spécifique pour afficher le détails d'un formateur.
+1. Affichez une route boujour paramétrique, si le paramètre de votre route vaut 1 affichez "Bonjour" si il vaut 2, affichez "Hello" 
+ routes possible :  `bonjour/1`, `bonjour/2`
+2. Créez la méthode qui affiche un trainer.
+3. Mettez en place la route et son template spécifique pour afficher le détails d'un formateur.
    
 ### Partie 2
 
