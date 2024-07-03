@@ -109,6 +109,4 @@ Pour illustrer une relation Many-to-Many avec Doctrine, nous allons ajouter une 
     php bin/console doctrine:fixtures:load
     ```
 
-7. Créez un contrôleur pour afficher les formateurs et leurs sujets.
-
-8. Créez un template Twig pour afficher les formateurs et leurs sujets.
+7. Dans la page qui affiche le détails d'un formateur afficher ces articles et les matières enseignées par le formateur.
