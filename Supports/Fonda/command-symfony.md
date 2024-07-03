@@ -44,6 +44,12 @@ hp bin/console importmap:install
 # creation controller
 symfony console make:controller Home
 
+# Creation de formulaire maker
+composer require --dev symfony/maker-bundle
+
+# barre de debug
+composer require --dev symfony/profiler-pack
+
 ################################ ORM Doctrine ####################################################
 
 # Doctrine ORM
@@ -78,4 +84,14 @@ php bin/console doctrine:fixtures:load
 
 # vérifiez que les données sont bien dans les tables
 php bin/console dbal:run-sql 'SELECT * FROM trainer'
+
+composer require symfony/form
+
+# ainsi que des maker dev utils
+composer require --dev symfony/maker-bundle
+
+# debug
+php bin/console debug:form
+
+composer require symfony/validator
 ```

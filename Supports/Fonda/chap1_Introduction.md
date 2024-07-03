@@ -2,6 +2,8 @@
 
 ⛅ Cours Symfony 
 
+La documentation [symfony](https://symfony.com/doc/current/index.html)
+
 Pour utiliser Symfony il faut :
 
 -  PHP au moins 8.1 intl, pdo_mysql, xsl, amqp, gd, openssl, sodium ou plus & les extensions suivantes :

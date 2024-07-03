@@ -198,6 +198,8 @@ Et pour générer des **données fictives**, on va installer [FakerPHP/Faker](ht
 composer require fakerphp/faker --dev
 ```
 
+⚠️ Vous avez la documentation ici : [faker](https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#faker)
+
 > [!TIP]
 > Pour placer une dépendence dans les dépendence de développement, on utilise l'argument `--dev`.
 
