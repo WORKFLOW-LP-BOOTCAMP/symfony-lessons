@@ -224,3 +224,26 @@ class ProductRepository extends ServiceEntityRepository
     }
 }
 ```
+
+## Exercices - listes
+
+###  Exercice 1: Récupérer tous les formateurs
+
+### Exercice 2: Rechercher un formateur par son nom
+
+### Exercice 3: Récupérer tous les articles
+
+### Exercice 4: Rechercher des articles par leur titre
+
+### Exercice 5: Récupérer les articles d'un formateur spécifique
+
+### Exercice 6: Récupérer tous les sujets
+
+### Exercice 7: Récupérer les articles liés à un sujet spécifique
+
+
+### Exercice 8: Récupérer les formateurs qui ont écrit au moins un article
+
+### Exercice 9: Récupérer le nombre total d'articles par sujet
+
+### Exercice 10: Récupérer les sujets avec le nombre d'articles associés
