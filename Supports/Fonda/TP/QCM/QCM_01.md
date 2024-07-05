@@ -122,4 +122,3 @@
 - C) `symfony composer require profiler`
 - D) `composer add profiler --dev`
 
-En utilisant ce QCM progressif, vous pouvez tester vos connaissances sur l'installation et la configuration de Symfony tout en renforçant les concepts clés présentés dans le cours.
