@@ -1,5 +1,7 @@
 # CRUD - Trainer
 
+Avant de commencer créer un lien dans le menu principal vers tous les articles. 
+
 ## 1. Créer les Entités
 
 Déjà vu dans le cours.
@@ -11,7 +13,9 @@ Déjà vu dans le cours.
 Nous allons créer les méthodes suivantes dans notre contrôleur.
 
 1. listTrainers
+    *Sur cette pagae afficher tous les trainers avec leurs données ainsi que 3 boutons cliquable pour respectivement voir le détails d'un trainer, éditer un trainer et le supprimer.*
 2. createTrainer
+   *Mettez en place le bootstrap dans la configuration dans twig*
 3. showTrainer
 4. updateTrainer
 5. deleteTrainer
