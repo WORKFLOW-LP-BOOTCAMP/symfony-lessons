@@ -2,6 +2,9 @@
 
 
 ```bash
+#debug bar JAMAIS en production
+composer require --dev symfony/profiler-pack
+
 curl -sS https://get.symfony.com/cli/installer | bash
 mv /Users/votre_nom_de_machine/.symfony/bin/symfony /usr/local/bin/symfony
 
@@ -31,6 +34,11 @@ composer remove twig
 php bin/console debug:config twig
 
 composer require symfony/asset-mapper symfony/asset symfony/twig-pack
+
+php bin/console importmap:require bootstrap
+php bin/console importmap:require stimulus
+
+php bin/console importmap:remove stimulus
 
 # production
 php bin/console asset-map:compile

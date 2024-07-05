@@ -4,6 +4,8 @@
 
 La documentation [symfony](https://symfony.com/doc/current/index.html)
 
+Des vidéos importantes [symfonycasts](https://symfonycasts.com/)
+
 Pour utiliser Symfony il faut :
 
 -  PHP au moins 8.1 intl, pdo_mysql, xsl, amqp, gd, openssl, sodium ou plus & les extensions suivantes :
@@ -646,6 +648,18 @@ Remarque : pour connaitre la version de Twig que vous utilsiez voyez le fichier 
 ```json
 "symfony/twig-bundle": "7.0.*",
 ```
+
+## Profiler
+
+Le profileur est un outil de développement puissant qui fournit des informations détaillées sur l'exécution de toute requête.
+
+>[!WARNING] JAMAIS EN PRODUCTIO
+
+```bash
+composer require --dev symfony/profiler-pack
+```
+
+[Documentation](https://symfony.com/doc/current/profiler.html)
 
 ## TP 
 

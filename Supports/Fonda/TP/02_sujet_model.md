@@ -61,6 +61,7 @@ Modifiez l'entité Trainer en ajoutant le champs **stars** (notation sur 5) de t
 
 Hydratez cette table avec les DataFixtures ( même fichier ).
 
+
 1. Affichez les données d'exemple dans un nouveau contrôleur
 
    1. Créez le contrôleur TrainerController et créez les routes pour afficher : 
@@ -110,3 +111,10 @@ Pour illustrer une relation Many-to-Many avec Doctrine, nous allons ajouter une 
     ```
 
 7. Dans la page qui affiche le détails d'un formateur afficher ces articles et les matières enseignées par le formateur.
+   
+   **Indications** créez un lien pour chaque trainer dans la page qui présente tous les trainers.
+   
+   ```php
+   // utilisez la méthode find du repository pour récupérer 
+   $trainer = $em->getRepository(Trainer::class)->find( $id ) ;
+   ```
