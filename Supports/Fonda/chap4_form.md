@@ -221,5 +221,3 @@ class Task
     protected \DateTimeInterface $dueDate;
 }
 ```
-
-C'est tout ! Si vous soumettez à nouveau le formulaire avec des données invalides, vous verrez les erreurs correspondantes affichées avec le formulaire.
