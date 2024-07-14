@@ -93,6 +93,12 @@ php bin/console doctrine:fixtures:load
 # vérifiez que les données sont bien dans les tables
 php bin/console dbal:run-sql 'SELECT * FROM trainer'
 
+# voir les migrations 
+php bin/console doctrine:migrations:status
+
+# défaire une migration
+php bin/console doctrine:migrations:execute <version> --down
+
 composer require symfony/form
 
 # ainsi que des maker dev utils
